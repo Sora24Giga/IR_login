@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active:
+      - db
+  datasource:
+    url: jdbc:mysql://localhost:3306/irfood?createDatabaseIfNotExist=true&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+  servelet:
+    multipart:
+      max-file-size: 10MB
+application:
+  security:
+    jwt:
+      secret-key: DDj5lkpjjC1RYM7xs9Hn8JRjynOzb9kv5gT/2IPkjjdkpOY7tR2vIZ1mhz2yjCjRY0h4mUo0ytX+ij8mg9Nccw==
+      expiration: 86400000 # 86400000 @ a day
+      refresh-token:
+        expiration: 604800000 # 7days
